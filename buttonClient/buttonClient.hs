@@ -9,6 +9,7 @@ main = do
   Z.withContext 1 $ \ctx -> do
     Z.withSocket ctx Z.Sub $ \sock -> do
       Z.connect sock "tcp://10.121.43.229:5227"
+      Z.subscribe sock ""
       putStrLn "Handling data."
       handleMessages sock
 
